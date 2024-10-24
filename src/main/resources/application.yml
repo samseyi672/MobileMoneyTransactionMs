@@ -2,18 +2,18 @@ spring:
    application:
      name: mobilemoneytransactionms
    profiles:
-     active: "prod"
-     datasource:
-       url: jdbc:mysql://localhost:3306/mobilemoneytransactiondb
-       username: root
-       password: root
-     jpa:
-       show-sql: true
-     sql:
-       init:
-         mode: always
-     config:
-       import: "optional:configserver:http://localhost:8071/"
+     active: default
+   datasource:
+      url: jdbc:mysql://localhost:3307/mobilemoneytransactiondb
+      username: root
+      password: root
+   jpa:
+     show-sql: true
+   sql:
+     init:
+        mode: always
+   config:
+     import: "optional:configserver:http://localhost:8071/"
 
    management:
      endpoints:
@@ -42,10 +42,23 @@ eureka:
     fetchRegistry: true
     registerWithEureka: true
     serviceurl:
-      defaultZone: http://localhost:8070/eureka/
+      defaultZone: http://localhost:8761/eureka/
 #for description in the eureka microservice network.
 info:
   app:
     name: "mobilemoneytransactionms"
     description: "Mobile Money"
     version: "1.0.0"
+
+
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to Mobile Money accounts related prod APIs "
+  contactDetails:
+    name: "Samson Oluwaseyi - Product Owner"
+    email: "samseyi672@gmail.com"
+  onCallSupport:
+    - (453) 392-4829
+    - (236) 203-0384

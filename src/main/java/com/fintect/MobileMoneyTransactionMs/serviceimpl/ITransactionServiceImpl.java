@@ -9,6 +9,7 @@ import com.fintect.MobileMoneyTransactionMs.exceptions.InsufficientAccountBalanc
 import com.fintect.MobileMoneyTransactionMs.service.ITransactionService;
 import lombok.AllArgsConstructor;
 import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -20,10 +21,14 @@ import java.util.Map;
 @AllArgsConstructor
 public class ITransactionServiceImpl implements ITransactionService {
 
+
+    @Autowired
     private  BalanceLeggerAccount balanceLeggerAccount ;
 
+    @Autowired
     private RestTemplate restTemplate ;
 
+    @Autowired
     private Apipath apipath ;
     @Override
     public ResponseDto processInterBankTransaction(InterBankRequest interBankRequest) {
